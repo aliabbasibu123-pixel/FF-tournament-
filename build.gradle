@@ -1,28 +1,17 @@
 
-apply plugin: 'com.android.application'
-
-android {
-    namespace "com.example.ff_tournament_app"
-    compileSdkVersion 33
-
-    defaultConfig {
-        applicationId "com.example.ff_tournament_app"
-        minSdkVersion 21
-        targetSdkVersion 33
-        versionCode 1
-        versionName "1.0"
-        multiDexEnabled true
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
     }
 }
 
-dependencies {
-    implementation 'androidx.multidex:multidex:2.0.1'
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
